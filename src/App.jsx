@@ -1,21 +1,22 @@
-import React from "react";
-import Navbar from "./Components/Navbar";
-import Banner from "./Components/Banner/Banner";
-import Features from "./Components/Features/Features";
-import LocomotiveScroll from "locomotive-scroll";
-
+import React from 'react'
+import Input from './Components/Input'
+import { useState } from 'react'
+import Todoform from './Components/Todoform'
 
 const App = () => {
-   const locomotiveScroll = new LocomotiveScroll();
+  const[todo,setTodo]=useState([
+    {id:1,title:"guitar",task:true},
+    {id:2,title:"gyming",task:false},
+    {id:3,title:"learn coding",task:true},
+  ])
   return (
-    <div className="w-full h-auto  bg-[#1A2130] ">
-      <div className="max-w-screen-2xl mx-auto px-16 ">
-        <Navbar />
-        <Banner />
-        <Features />
-      </div>
+    <div>
+      <h1 className='bg-green-300 h-[10vh] text-center font-serif text-2xl p-4'>ToDo-LiSt</h1>
+      <Input/>
+<Todoform todo={todo}/>
+      
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
